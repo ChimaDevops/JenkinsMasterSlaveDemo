@@ -7,7 +7,7 @@ pipeline{
   stages{
     stage('version-control'){
       steps{
-        checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'master-slave-jenkins', url: 'https://github.com/etechteam3group5/distributed-build.git']]])
+        checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'githubid', url: 'https://github.com/ChimaDevops/JenkinsMasterSlaveDemo.git']]])
       }
     }
     stage('parallel-job'){

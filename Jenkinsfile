@@ -10,7 +10,7 @@ pipeline{
         checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'githubid', url: 'https://github.com/ChimaDevops/JenkinsMasterSlaveDemo.git']]])
       }
     }
-    stage('parallel-job1'){
+    stage('parallel-job'){
       parallel{
         stage('Max'){
           steps{
@@ -24,12 +24,12 @@ pipeline{
         }
       }
     }
-    agent {
-      label {
-        label 'slave2'
+    stage('Parallel-job2'){
+      agent {
+        label {
+          label 'slave2'
+        }
       }
-    }
-    stage('parallel-job2'){
       parallel{
         stage('Christiana'){
           steps{
@@ -43,16 +43,16 @@ pipeline{
         }
       }
     }
-    agent {
-      label {
-        label 'slave3'
+    stage('Parallel-job2'){
+      agent {
+        label {
+          label 'slave2'
+        }
       }
-    }
-    stage('parallel-job3'){
       parallel{
         stage('Gregory'){
           steps{
-            echo 'Gregory action'
+            echo 'Christiana action'
           }
         }
         stage('Lawal'){

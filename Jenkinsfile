@@ -7,59 +7,46 @@ pipeline{
   stages{
     stage('version-control'){
       steps{
-        checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'github-id', url: 'https://github.com/ChimaDevops/JenkinsMasterSlaveDemo.git']]])
+        checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'master-slave-jenkins', url: 'https://github.com/etechteam3group5/distributed-build.git']]])
       }
     }
-    stage('parallel-job-A'){
+    stage('parallel-job'){
       parallel{
         stage('sub-job1'){
-          steps{
-            echo 'action'
-          }
-        }
-        stage('sub-job2'){
-          steps{
-            echo 'action'
-          }
-        }
-      }
-    }
-    stage('parallel-job-B'){
-      parallel{
-       agent {
-         label {
-           label 'slave2'
-          }
-        }
-        stage('sub-job3'){
           steps{
             echo 'action1'
           }
         }
-        stage('sub-job4'){
+        stage('sub-job2'){
           steps{
             echo 'action2'
           }
         }
+        stage('sub-job3'){
+            steps{
+                echo 'action3'
+            }
+        }
       }
     }
-    stage('parallel-job-C'){
-      parallel{
-       agent {
-         label {
-           label 'slave3'
-          }
+    stage('codebuild'){
+      agent {
+        label {
+          label 'slave2'
         }
-        stage('sub-job5'){
-          steps{
-            echo 'action'
-          }
+      }
+      steps{
+        sh 'cat /etc/passwd'
+      }
+    }
+    stage('codecomplte'){
+      agent {
+        label {
+          label 'slave3'
         }
-        stage('sub-job6'){
-          steps{
-            echo 'action'
-          }
-        }
+      }
+      steps{
+        sh 'cat /etc/passwd'
       }
     }
   }

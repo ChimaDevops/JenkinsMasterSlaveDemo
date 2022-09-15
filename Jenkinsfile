@@ -12,24 +12,19 @@ pipeline{
     }
     stage('parallel-job'){
       parallel{
-        stage('sub-job1'){
+        stage('Max'){
           steps{
-            echo 'action1'
+            echo 'action'
           }
         }
-        stage('sub-job2'){
+        stage('Tunde'){
           steps{
-            echo 'action2'
+            echo 'action'
           }
-        }
-        stage('sub-job3'){
-            steps{
-                echo 'action3'
-            }
         }
       }
     }
-    stage('codebuild'){
+    stage('Chrstiana'){
       agent {
         label {
           label 'slave2'
@@ -39,7 +34,12 @@ pipeline{
         sh 'cat /etc/passwd'
       }
     }
-    stage('codecomplte'){
+    stage('Chima'){
+      steps{
+        echo 'action'
+      }
+    }
+    stage('Chizoba'){
       agent {
         label {
           label 'slave3'
@@ -47,6 +47,11 @@ pipeline{
       }
       steps{
         sh 'cat /etc/passwd'
+      }
+    }
+    stage('Gregory'){
+      steps{
+        echo 'action'
       }
     }
   }

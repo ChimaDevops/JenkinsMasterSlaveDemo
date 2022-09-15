@@ -14,12 +14,12 @@ pipeline{
       parallel{
         stage('Max'){
           steps{
-            echo 'action'
+            echo 'max action'
           }
         }
         stage('Tunde'){
           steps{
-            echo 'action'
+            echo 'Tunde action'
           }
         }
       }
@@ -31,12 +31,12 @@ pipeline{
         }
       }
       steps{
-        sh 'cat /etc/passwd'
+        echo 'Christiana action'
       }
     }
     stage('Chima'){
       steps{
-        echo 'action'
+        echo 'Chima action'
       }
     }
     stage('Chizoba'){
@@ -46,12 +46,12 @@ pipeline{
         }
       }
       steps{
-        sh 'cat /etc/passwd'
+        echo 'Chizoba action'
       }
     }
     stage('Gregory'){
       steps{
-        echo 'action'
+        echo 'Gregory action'
       }
     }
   }

@@ -24,40 +24,50 @@ pipeline{
         }
       }
     }
-    stage('Parallel-job2'){
+    stage('Chrstiana'){
       agent {
         label {
           label 'slave2'
         }
       }
+      steps{
+        echo 'Christiana action'
+      }
+    }
+    stage('parallel-job2'){
       parallel{
-        stage('Christiana'){
-          steps{
-            echo 'Christiana action'
-          }
-        }
         stage('Chima'){
           steps{
             echo 'Chima action'
           }
         }
-      }
-    }
-    stage('Parallel-job3'){
-      agent {
-        label {
-          label 'slave3'
-        }
-      }
-      parallel{
         stage('Gregory'){
           steps{
             echo 'Gregory action'
           }
         }
+      }
+    }
+    stage('Chizoba'){
+      agent {
+        label {
+          label 'slave3'
+        }
+      }
+      steps{
+        echo 'Chizoba action'
+      }
+    }
+    stage('parallel-job3'){
+      parallel{
         stage('Lawal'){
           steps{
             echo 'Lawal action'
+          }
+        }
+        stage('Valentine'){
+          steps{
+            echo 'Valentine action'
           }
         }
       }

@@ -26,11 +26,11 @@ pipeline{
     }
     stage('parallel-job-B'){
       parallel{
-        agent {
-        label {
-          label 'slave2'
+       agent {
+         label {
+           label 'slave2'
+          }
         }
-      }
         stage('sub-job3'){
           steps{
             echo 'action1'
@@ -45,11 +45,11 @@ pipeline{
     }
     stage('parallel-job-C'){
       parallel{
-        agent {
-        label {
-          label 'slave3'
+       agent {
+         label {
+           label 'slave3'
+          }
         }
-      }
         stage('sub-job5'){
           steps{
             echo 'action'

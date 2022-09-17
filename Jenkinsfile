@@ -15,15 +15,11 @@ pipeline{
         stage('Max'){
           steps{
             echo 'max action'
-            sh "lscpu"
-            sh "sudo systemctl status sshd"
           }
         }
         stage('Tunde'){
           steps{
             echo 'Tunde action'
-            sh "lscpu"
-            sh "sudo systemctl status sshd"
           }
         }
       }
@@ -36,8 +32,6 @@ pipeline{
       }
       steps{
         echo 'Christiana action'
-        sh "lscpu"
-        sh "sudo systemctl status sshd"
       }
     }
     stage('parallel-job2'){
@@ -45,15 +39,11 @@ pipeline{
         stage('Chima'){
           steps{
             echo 'Chima action'
-            sh "lscpu"
-            sh "sudo systemctl status sshd"
           }
         }
         stage('Gregory'){
           steps{
             echo 'Gregory action'
-            sh "lscpu"
-            sh "sudo systemctl status sshd"
           }
         }
       }
@@ -66,8 +56,6 @@ pipeline{
       }
       steps{
         echo 'Chizoba action'
-        sh "lscpu"
-        sh "sudo systemctl status sshd"
       }
     }
     stage('parallel-job3'){
@@ -75,15 +63,11 @@ pipeline{
         stage('Lawal'){
           steps{
             echo 'Lawal action'
-            sh "lscpu"
-            sh "sudo systemctl status sshd"
           }
         }
         stage('Valentine'){
           steps{
             echo 'Valentine action'
-            sh "lscpu"
-            sh "sudo systemctl status sshd"
           }
         }
       }

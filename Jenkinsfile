@@ -16,14 +16,14 @@ pipeline{
           steps{
             echo 'max action'
             sh "lscpu"
-            sh "sudo systemctl status jenkins"
+            sh "sudo systemctl status sshd"
           }
         }
         stage('Tunde'){
           steps{
             echo 'Tunde action'
             sh "lscpu"
-            sh "sudo systemctl status jenkins"
+            sh "sudo systemctl status sshd"
           }
         }
       }
@@ -37,7 +37,7 @@ pipeline{
       steps{
         echo 'Christiana action'
         sh "lscpu"
-        sh "sudo systemctl status jenkins"
+        sh "sudo systemctl status sshd"
       }
     }
     stage('parallel-job2'){
@@ -46,14 +46,14 @@ pipeline{
           steps{
             echo 'Chima action'
             sh "lscpu"
-            sh "sudo systemctl status jenkins"
+            sh "sudo systemctl status sshd"
           }
         }
         stage('Gregory'){
           steps{
             echo 'Gregory action'
             sh "lscpu"
-            sh "sudo systemctl status jenkins"
+            sh "sudo systemctl status sshd"
           }
         }
       }
@@ -67,7 +67,7 @@ pipeline{
       steps{
         echo 'Chizoba action'
         sh "lscpu"
-        sh "sudo systemctl status jenkins"
+        sh "sudo systemctl status sshd"
       }
     }
     stage('parallel-job3'){
@@ -76,14 +76,14 @@ pipeline{
           steps{
             echo 'Lawal action'
             sh "lscpu"
-            sh "sudo systemctl status jenkins"
+            sh "sudo systemctl status sshd"
           }
         }
         stage('Valentine'){
           steps{
             echo 'Valentine action'
             sh "lscpu"
-            sh "sudo systemctl status jenkins"
+            sh "sudo systemctl status sshd"
           }
         }
       }

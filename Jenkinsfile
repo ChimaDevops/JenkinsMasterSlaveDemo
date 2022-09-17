@@ -15,15 +15,15 @@ pipeline{
         stage('Max'){
           steps{
             echo 'max action'
-            sh "lscpu"
-            sh "lsblk"
+            sh "pwd"
+            sh "date"
           }
         }
         stage('Tunde'){
           steps{
             echo 'Tunde action'
-            sh "lscpu"
-            sh "free -g"
+            sh "pwd"
+            sh "date"
           }
         }
       }
@@ -36,8 +36,8 @@ pipeline{
       }
       steps{
         echo 'Christiana action'
-        sh "lscpu"
-        sh "whoami"
+        sh "pwd"
+        sh "date"
       }
     }
     stage('parallel-job2'){
@@ -45,14 +45,14 @@ pipeline{
         stage('Chima'){
           steps{
             echo 'Chima action'
-            sh "lscpu"
-            sh "netstat"
+            sh "pwd"
+            sh "date"
           }
         }
         stage('Gregory'){
           steps{
             echo 'Gregory action'
-            sh "lscpu"
+            sh "pwd"
             sh "date"
           }
         }
@@ -66,8 +66,8 @@ pipeline{
       }
       steps{
         echo 'Chizoba action'
-        sh "lscpu"
         sh "pwd"
+        sh "date"
       }
     }
     stage('parallel-job3'){
@@ -75,15 +75,15 @@ pipeline{
         stage('Lawal'){
           steps{
             echo 'Lawal action'
-            sh "lscpu"
-            sh "free -m"
+            sh "pwd"
+            sh "date"
           }
         }
         stage('Valentine'){
           steps{
             echo 'Valentine action'
-            sh "lscpu"
-            sh "free"
+            sh "pwd"
+            sh "date"
           }
         }
       }
